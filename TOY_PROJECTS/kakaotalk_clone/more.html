@@ -36,10 +36,81 @@
                 <i class="fas fa-qrcode"></i>
             </span>
             <span class="head__icon">
-                <i class="fas fa-cog"></i>
+                <a href="./setting.html">
+                    <i class="fas fa-cog"></i>
+                </a>
             </span>
         </div>
     </header>
+
+    <!-- main 영역-->
+    <main class="more">
+        <header class="more__header">
+            <div class="freinds__freiend friend friend--lg"> <!-- 내 프로필-->
+                <div class="friend__column"> <!-- 왼쪽 사진, 이름, 한줄-->
+                    <img src="./images/profile1.png" class="g-avater friend__avatar">
+                    <div class="friend__content">
+                        <span class="friend__name">한창희</span>
+                        <span class="friend__status">chayans999@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="friend__column"> <!-- 오른쪽 노래-->
+                    <i class="far fa-comment-alt fa-2x"></i>
+                </div>
+            </div>
+
+            <ul class="more__btn-list"> <!-- 바로 아래 3개 아이콘-->
+                <li class="more__btn">
+                    <span class="more__btn-icon">
+                        <i class="far fa-smile fa-2x"></i>
+                    </span>
+                    <span class="more__btn-title">Emotions</span>
+                </li>
+
+                <li class="more__btn">
+                    <span class="more__btn-icon">
+                        <i class="fas fa-brush fa-2x"></i>
+                    </span>
+                    <span class="more__btn-title">Themes</span>
+                </li>
+
+                <li class="more__btn">
+                    <span class="more__btn-icon">
+                        <i class="fab fa-kickstarter-k fa-2x"></i>
+                    </span>
+                    <span class="more__btn-title">Account</span>
+                </li>
+            </ul>
+        </header>
+
+        <section class="more__suggestions"> <!-- suggestion 영역-->
+            <h5 class="more__title">Suggestions</h5>
+            <ul class="more__suggestions-list">
+                <li class="more__suggestion suggestion">
+                    <span class="suggestion__icon">
+                        <i class="fas fa-quote-right fa-2x"></i>
+                    </span>
+                    <span class="suggestion__title">Kakao Story</span>
+                </li>
+
+                <li class="more__suggestion suggestion">
+                    <span class="suggestion__icon">
+                        <i class="fas fa-beer fa-2x"></i>
+                    </span>
+                    <span class="suggestion__title">Kakao Friends</span>
+                </li>
+
+                <li class="more__suggestion suggestion">
+                    <span class="suggestion__icon">
+                        <i class="fas fa-gamepad fa-2x"></i>
+                    </span>
+                    <span class="suggestion__title">Friends Gem</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
 
     <nav class="nav"> <!-- 네비게이션 : 최하단 영역-->
         <ul class="nav__list">
@@ -67,6 +138,5 @@
     </nav>
 
 
-    <!-- 페이지별 section 영역-->
 </body>
 </html>
