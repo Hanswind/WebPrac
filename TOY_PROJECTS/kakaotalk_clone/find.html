@@ -38,6 +38,65 @@
         </div>
     </header>
 
+    <!-- main 섹션-->
+    <main class="find">
+        <header class="find-header"> <!-- 상단 4개의 버튼-->
+            <ul class="find__header-list">
+                <li class="find__header-btn header-btn">
+                    <span class="header-btn__icon">
+                        <i class="fas fa-qrcode fa-2x"></i>
+                    </span>
+                    <span class="header-btn__title">QR Code</span>
+                </li>
+
+                <li class="find__header-btn header-btn">
+                    <span class="header-btn__icon">
+                        <i class="fas fa-user-plus fa-2x"></i>
+                    </span>
+                    <span class="header-btn__title">Add by Contacts</span>
+                </li>
+
+                <li class="find__header-btn header-btn">
+                    <span class="header-btn__icon">
+                        <i class="fas fa-passport fa-2x"></i>
+                    </span>
+                    <span class="header-btn__title">Add by ID</span>
+                </li>
+
+                <li class="find__header-btn header-btn">
+                    <span class="header-btn__icon">
+                        <i class="far fa-envelope fa-2x"></i>
+                    
+                    </span>
+                    <span class="header-btn__title">Invite</span>
+                </li>
+            </ul>
+        </header>
+
+        <ul class="find__recommended"> <!-- 추천 친구 목록 -->
+            <h5 class="find__title">
+                Recommended Friends
+            </h5>
+
+            <li class="find__freiend friend"> <!-- 친구 목록중 한개 --> <!-- friend 클래스명은 앞에 index에 만든 클래스와 동일해서 사용-->
+
+                <div class="friend__column"> <!-- 왼쪽 사진, 이름, 한줄-->
+                    <img src="./images/profile1.png" class="g-avater friend__avatar">
+                    <div class="friend__content">
+                        <span class="friend__name">김개똥</span>
+                    </div>
+                </div>
+
+                <div class="friend__column"> <!-- 오른쪽 노래-->
+                    <div class="friend__add-btn">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </main>
+
     <nav class="nav"> <!-- 네비게이션 : 최하단 영역-->
         <ul class="nav__list">
             <li class="nav__list-item">
