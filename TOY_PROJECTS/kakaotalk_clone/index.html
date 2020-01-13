@@ -25,7 +25,7 @@
     </div>
 
     <header class = "header"> <!-- 헤더-->
-        <div class="header__column">
+        <div class="header__column"> <!-- 부모 클래스와 관련 있으니 클래스명 이렇게 지음-->
             <h1 class = "header__title">Chats</h1>
         </div>
         <div class="header__column">
@@ -41,6 +41,28 @@
         </div>
     </header>
 
+
+    <!-- 페이지별 section 영역-->
+    <main class = "chats"> <!-- 브라우저 내 main 파트임을 알림-->
+        <ul class="chats__list">
+            <li class="chats__chat">
+                <!-- 내부에 여러 영역 포함 예정이기에 chat으로 새로 component 이름 만들어줌-->
+                <div class="chat__column"> 
+                    <img class="chat__avater" src = "./images/profile1.png">
+                    <div class="chat__content">
+                        <span class="chat__username">Han</span>
+                        <span class="chat__preview">Going home</span>
+                    </div>
+                </div>
+                <div class="chat__column"> 
+                    <span class = "chat__timestamp">Yesterday</span>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+
+    <!-- 모든 부분 공통 영역-->
     <nav class="nav"> <!-- 네비게이션 : 최하단 영역-->
         <ul class="nav__list">
             <li class="nav__list-item">
@@ -67,6 +89,6 @@
     </nav>
 
 
-    <!-- 페이지별 section 영역-->
+    
 </body>
 </html>
