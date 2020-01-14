@@ -1,1 +1,14 @@
+
+/* 구글 폰트 import */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
 @import "reset.css";
+@import "status-bar.css";
+
+/* default 속성 */
+body {
+    background-color : white;
+    padding: 10px 20px;
+    color : #020202;
+    font-family: 'Open Sans', sans-serif;
+}
