@@ -5,8 +5,13 @@
 @import "reset.css";
 @import "status-bar.css";
 @import "header.css";
+@import "nav-bar.css";
 
 /* default 속성 - 메인 css */
+
+* {
+    box-sizing : border-box;
+}
 body {
     background-color : white;
     padding: 10px 20px;
