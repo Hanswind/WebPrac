@@ -4,11 +4,16 @@
 
 @import "reset.css";
 @import "status-bar.css";
+@import "header.css";
 
-/* default 속성 */
+/* default 속성 - 메인 css */
 body {
     background-color : white;
     padding: 10px 20px;
     color : #020202;
     font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color : inherit;  /* 부모요소의 색깔 가져옴 */
 }
