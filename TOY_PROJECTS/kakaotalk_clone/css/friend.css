@@ -7,11 +7,43 @@
 
 .friend .friend__avatar {
     width : 50px;
-    border-radius: 35%;
+    border-radius: 38%;
     height : 50px;
 }
 
 .friend__avatar.g-avater {
     width : 70px;
     height : 70px;
+}
+
+.friend__avatar.m-avater {
+    width : 60px;
+    height: 60px;
+}
+
+.friend .friend__column {
+    display: flex;
+    align-items: center;
+}
+
+.friend__column .friend__avatar {
+    margin-right: 15px;
+}
+
+.friend__content .friend__name {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.friend__content .friend__status, .friend__content .friend__bottom-text, .friend .chat__timestamp {
+
+    opacity: 0.6;
+}
+
+.friend__content .friend__bottom-text { /* only on chats screen */
+    font-size: 14px;
+}
+
+.friend__content .friend__status, .friend .chat__timestamp { /* only on friends screen*/ /* Chat's timestamp */
+    font-size : 12px;
 }

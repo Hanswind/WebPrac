@@ -22,4 +22,5 @@ body {
 
 a {
     color : inherit;  /* 부모요소의 색깔 가져옴 */
+    text-decoration: none;
 }
