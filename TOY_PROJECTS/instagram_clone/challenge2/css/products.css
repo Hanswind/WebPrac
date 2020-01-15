@@ -1,0 +1,47 @@
+/* airpod product css */
+
+
+.products .products__img {
+    text-align: center;
+    margin : 30px;
+}
+
+.product {
+    margin : 30px;
+}
+
+.product > .product__name {
+    font-size : 23px;
+    font-weight: bold;
+    margin-bottom : 15px;
+}
+
+.product > .product__discript {
+    color : #BDC7E4;
+    line-height: 20px;
+    margin-bottom : 20px;
+}
+
+.sale {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sale .sale__price {
+    font-size : 23px;
+    font-weight: bold;
+}
+
+.sale__star i {
+    color : orange;
+}
+
+.sale__star i:last-child {
+    color : lightgray;
+}
+
+.sale .sale__comment {
+    font-size: 14px;
+    color : #BDC7E4;
+}

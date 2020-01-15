@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import "./reset.css";
+@import "./products.css";
+@import "./profile.css";
+
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color : black;
+}
+
+section {
+    width : 100%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+article {
+    background-color : white;
+    width : 500px;
+    min-height: 500px;
+    margin : 10px;
+    border-radius: 30px;
+}
