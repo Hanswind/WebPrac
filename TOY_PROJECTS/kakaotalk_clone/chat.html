@@ -13,58 +13,60 @@
     </head>
     <body>
         <!-- 모든 부분 공통 영역-->
-        <div class="status-bar"> <!-- 상단 상태바-->
-            <div class="statue-bar__column"> 
-                <span class="statue-bar__clock">15:01 </span>
+        <div class = "chats-body">
+            <div class="status-bar"> <!-- 상단 상태바-->
+                <div class="statue-bar__column">
+                    <span class="statue-bar__clock">15:01 </span>
+                </div>
+                <div class="statue-bar__column">
+                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-volume-mute"></i>
+                    <i class="fas fa-wifi"></i>
+                    <span class="status-bar__battery-level">100%</span>
+                    <i class="fas fa-battery-full"></i>
+                </div>
             </div>
-            <div class="statue-bar__column">
-                <i class="fas fa-clock"></i>
-                <i class="fas fa-volume-mute"></i>
-                <i class="fas fa-wifi"></i>
-                <span class="status-bar__battery-level">100%</span>
-                <i class="fas fa-battery-full"></i>
-            </div>
+
+            <header class = "header"> <!-- 헤더-->
+                <div class="header__column">
+                    <a href="./more.html" class="header__back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h1 class = "header__title">김개똥</h1>
+                </div>
+                <div class="header__column">
+                    <span class="head__icon">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <span class="head__icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </div>
+            </header>
+
+            <!-- main chat 영역-->
+            <main class="chat">
+                <ul class="chat__messages">
+                    <span class="chat__timestamp">Friday, January 11, 2020</span>
+                    <li class="incoming-message message"> <!--받은 메세지-->
+                        <img src="./images/profile1.png" class="g-avater friend__avatar" />
+                        <div class="message__content">
+                            <span class="message__author">김개똥</span>
+                            <div class="message__bubble">Congrats ILU!</div>
+                        </div>
+                        <span class="message__timestamp">15:19</span>
+                    </li>
+
+                    <li class="incoming-message message"> <!--보낸 메세지-->
+                        <span class="message__timestamp">15:21</span>
+                        <div class="message__content">
+                            <div class="message__bubble">Thx!!</div>
+                        </div>
+                    </li>
+
+                </ul>
+            </main>
         </div>
-
-        <header class = "header"> <!-- 헤더-->
-            <div class="header__column">
-                <a href="./more.html" class="header__back-btn">
-                    <i class="fas fa-arrow-left"></i>
-                </a>     
-                <h1 class = "header__title">김개똥</h1>
-            </div>
-            <div class="header__column">
-                <span class="head__icon">
-                    <i class="fas fa-search"></i>
-                </span>
-                <span class="head__icon">
-                    <i class="fas fa-bars"></i>
-                </span>
-            </div>
-        </header>
-
-        <!-- main chat 영역-->
-        <main class="chat">
-            <ul class="chat__messages">
-                <span class="chat__timestamp">Friday, January 11, 2020</span>
-                <li class="incoming-message message"> <!--받은 메세지-->
-                    <img src="./images/profile1.png" class="g-avater friend__avatar" />
-                    <div class="message__content">
-                        <span class="message__author">김개똥</span>
-                        <div class="message__bubble">Congrats ILU!</div>
-                    </div>
-                    <span class="message__timestamp">15:19</span>
-                </li>
-
-                <li class="incoming-message message"> <!--보낸 메세지-->
-                    <span class="message__timestamp">15:21</span>
-                    <div class="message__content">
-                        <div class="message__bubble">Thx!!</div>
-                    </div>
-                </li>
-
-            </ul>
-        </main>
 
         <div class="chat__write"> <!-- 메세지 작성영역-->
             <div class="chat__write-column">
