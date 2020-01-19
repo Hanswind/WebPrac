@@ -19,20 +19,66 @@
 }
 
 
-.chat__write {
+.chat__write--container {
     position : fixed;
-    bottom : 50px;
-    width: 80%;
+    bottom : 0;
     margin : 0 auto;
     left: 0;
     right : 0;
     display: flex;
     justify-content: space-between;
     align-items : center;
-    background-color : #fcfcfc;
+    width : 100%;
     padding : 0 20px;
+    /* box-shadow: 0px 8px 20px rgba(0,0,0,.2);  다른 사이트에서 복사해서 써도 굿 */
+}
+
+@keyframes float {
+    0% {
+        transform : translateY(-100px);
+        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, .25), rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+        rgba(0, 0, 0, 0.024) 0px -16px 16px -6px;
+    }
+    50% {
+        transform : translateY(-110px);
+        box-shadow: 0 30px 60px -62px rgba(50, 50, 93, .25), rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+        rgba(0, 0, 0, 0.024) 0px -16px 16px -6px;
+    }
+    100% {
+        transform: translateY(-100px);
+        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, .25), rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+        rgba(0, 0, 0, 0.024) 0px -16px 16px -6px;
+    }
+}
+.chat__write {
+    margin : 0 auto;
+    bottom : 0;
+    width : 100%;
+    border-radius: 0;
+    padding : 20px 60px;
+    border : none;
+    font-size: 14px;
+    transition : width .5s ease-in-out, border-radius .5s ease-in-out, transform .5s ease-in-out;
+}
+
+.chat__icon-left {
+    position : absolute;
+    left : 10px;
+}
+
+.chat__icon-right {
+    position : absolute;
+    right:10px;
+}
+
+.chat__write:focus {
+    outline : none;
+    width : 80%;
     border-radius: 40px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,.2); /* 다른 사이트에서 복사해서 써도 굿 */
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, .25), rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -16px 16px -6px;
+    rgba(0, 0, 0, 0.024) 0px -16px 16px -6px;
+    animation : float 3s linear infinite forwards;
 }
 
 .chat__write i {
@@ -44,11 +90,22 @@
 }
 
 .chat__write-column input {
-    padding: 20px 10px;
-    width: 100%;
-    border : none;
-    font-size: 14px;
 }
+
+.chat__write:focus ~ .chat__icon {
+    opacity: 0;
+}
+
+.chat__icon {
+    font-size: 18px;
+    transition : opacity .3s ease-in-out;
+}
+
+
+
+
+
+
 
 
 /* 메세지 창 - 시간 */
@@ -136,4 +193,36 @@
     background: -webkit-linear-gradient(to bottom, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+
+
+/* 메세지 기록들 나타나는 애니메이션 */
+@keyframes incomingAnim {
+    from {
+        opacity: 0;
+        transform : translateX(-200px);
+    }
+    to {
+        transform: none;
+
+    }
+}
+
+.incoming-message {
+    animation : incomingAnim .5s ease-in forwards;
+}
+
+@keyframes sentAnimation {
+    from {
+        opacity: 0;
+        transform : translateX(200px);
+    }
+    to {
+        transform: none;
+    }
+
+}
+
+.sent-message {
+    animation: sentAnimation .5s ease-in forwards;
 }
