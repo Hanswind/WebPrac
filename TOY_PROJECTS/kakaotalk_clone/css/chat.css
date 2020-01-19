@@ -1,15 +1,23 @@
+.header-wrapper {
+    position : fixed;
+    top : 0;
+    width : 100%;
+    padding : 5px 0;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -16px 16px -6px;
+}
 .chats-body {
-    padding : 0;
+    padding : 10px 0;
+    padding-top : 100px;
+    background-image: url("../images/chat_bg.png");
+    min-height: 1000px;
 }
 
 .chats-body .header, .chats-body .status-bar {
     padding : 0 20px;
 }
 
-.chat-screen {
-    background-image: url("../images/chat_bg.png");
-    min-height: 100vh;
-}
 
 .chat__write {
     position : fixed;
@@ -49,6 +57,7 @@
     display : flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding : 0 20px;
     padding-top : 30px;
 }
@@ -68,23 +77,24 @@
 /* 메세지 창 - 메세지 */
 .message {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width : 50%;
+    margin-bottom: 20px;
 }
 
 .message .message__content {
-    width : 80%;
+    right : 0;
+    align-items: flex-end;
 }
 
-.message__author {
-}
 .message .message__bubble {
     margin-top : 5px;
     background-color : white;
+    display: block;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
     rgba(0, 0, 0, 0.024) 0px -16px 16px -6px;
     padding : 10px 20px;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
 .incoming-message {
@@ -94,9 +104,36 @@
     display: inline-block;
     width : 30px;
     border-radius: 15px;
-    margin-right : 20px;
+    margin-right : 15px;
 }
 
+.incoming-message .message__author {
+    margin-top : 10px;
+    display: block;
+    font-weight: 600;
+    font-size : 12px;
+}
+
+
+.incoming-message .message__bubble {
+    border-bottom-left-radius: 0px;
+    width : auto;
+}
+
+
+
+
 .sent-message {
+    display: flex;
+    justify-content: flex-end;
     align-self : flex-end;
+}
+
+
+.sent-message .message__bubble {
+    border-bottom-right-radius: 0px;
+    background: #1FA2FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }

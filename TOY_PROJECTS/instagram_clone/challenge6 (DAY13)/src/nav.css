@@ -1,0 +1,25 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 56px;
+}
+
+.nav .nav__column {
+    width: 100%;
+    height: 100%;
+}
+
+.nav__column i {
+    width : inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__column i:hover {
+    color : #2698F9;
+    cursor: pointer;
+}

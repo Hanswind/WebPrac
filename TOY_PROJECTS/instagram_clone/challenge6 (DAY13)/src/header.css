@@ -1,0 +1,23 @@
+
+.header > div {
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.status-bar {
+    font-size : 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color : black;
+    padding-left:5px;
+}
+
+.profile-header {
+    font-size : 14px;
+}
+
+.profile-header i {
+    font-size :21px;
+    cursor: pointer;
+}

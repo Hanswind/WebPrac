@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import "reset.css";
+@import "header.css";
+@import "section.css";
+@import "nav.css";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color : #2698F9;
+    color : #777;
+}
+
+.body-screen {
+    z-index : 1;
+    position: relative;
+    margin : 10px;
+    width : 315px;
+    height: 680px;
+    background-color : white;
+    padding : 15px;
+}
+
+.body-screen:after {
+    z-index : -1;
+    width : 315px;
+    height: 680px;
+    position : absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color : white;
+    background-image: url("../images/profile.jpg");
+    background-repeat: no-repeat;
+    background-size : 100% 100%;
+    opacity: 0.1;
+}
