@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import "reset.css";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+article {
+    width : 100%;
+    height: 400px;
+    margin : 10px 0;
+    background-color: #F8F8F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article .screen {
+    width : 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen img {
+    width : 150px;
+    height : 150px;
+}
+
+
+
+/* info contents */
+h1 {
+    font-size : 23px;
+    font-weight: bold;
+    color : white;
+    margin : 5px 0;
+}
+
+p {
+    color : #E94362;
+}
+
+.info-btn {
+    margin : 30px 0;
+    width : 110px;
+    height: 35px;
+    background-color: #E94362;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.more_info {
+    background-color : #28394A;
+}
+
+
+
+/* Css for first aritcle - Camera */
+
+.camera {
+    position : relative;
+    background-color : #059A8E;
+}
+
+.camera .more_info {
+    position : absolute;
+    width : inherit;
+    height: inherit;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.camera .more_info:hover {
+    opacity: 1;
+    transform: translate(10px, 10px);
+    transition : all 0.5s ease-in-out;
+}
+
+
+
+
+/* css for second article - game center */
+.game_center {
+    position : relative;
+    background-color: #F7A4A2;
+
+    overflow: hidden;
+    height: inherit;
+}
+
+
+.game_center .game_center_image {
+    width: inherit;
+    height: inherit;
+    position : absolute;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease-in-out, height .5s ease-in-out;
+}
+
+.game_center:hover > .game_center_image {
+    height : 195px;
+    transform : translateY(-50px);
+    transition: all .5s ease-in-out;
+}
+
+
+.game_center:hover > .more_info{
+    transform : none;
+    transition : transform .5s ease-in-out;
+}
+
+.game_center .more_info {
+    position : absolute;
+    width : inherit;
+    left : 0;
+    bottom : 0;
+    display: flex;
+    justify-content: space-between;
+    padding : 10px 20px;
+    transform : translateY(105px);
+    transition : transform .5s ease-in-out;
+}
+
+.game_center .info-btn {
+    margin-top : 40px;
+    margin-bottom: 10px;
+}
+
+
+/* css for last article - safari */
+.safari {
+    position: relative;
+}
+
+.safari:hover > .safari_screen{
+
+    transform: translateY(-50px) scale(0.5, 0.5);
+    transition : transform .5s ease-in-out;
+}
+
+.safari .more_info {
+    width : inherit;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding : 30px;
+}
+
+.safari .info-btn {
+    margin : 0;
+}
+
+.safari_screen {
+    position : absolute;
+    width : inherit;
+    height : inherit;
+    background-color : #D6F0F9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
