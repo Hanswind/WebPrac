@@ -1,6 +1,5 @@
 .settings {
     border-top : 1px solid #f7f7f7;
-    padding-top : 30px;
 }
 
 .settings .settings_sections {
@@ -24,4 +23,8 @@
 
 .settings .settings_setting:last-child {
     margin-bootm : 0px;
+}
+
+.settings .settings__list {
+    padding-bottom: 20px;
 }
