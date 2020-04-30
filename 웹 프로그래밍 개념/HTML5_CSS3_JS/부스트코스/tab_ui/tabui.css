@@ -1,0 +1,27 @@
+h2 {
+    text-align: center;
+}
+.tab {
+    width : 600px;
+    margin : 0 auto;
+}
+.tabmenu {
+    background-color: bisque;
+    height : 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tabmenu > div {
+    width : 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.content {
+    background-color: antiquewhite;
+}
+
