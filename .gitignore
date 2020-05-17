@@ -5,3 +5,4 @@
 *.js
 *.bnf
 react/react_prac/chap_05/styling-react/node_modules/@babel/plugin-transform-flow-strip-types/LICENSE
+*.html
