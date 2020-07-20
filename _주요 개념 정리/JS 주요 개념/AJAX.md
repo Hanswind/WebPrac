@@ -1,0 +1,177 @@
+# AJAX
+
+: Axynchronous Javascript and XML
+
+: **'비동기' 적으로 JS 사용해 데이터 받아와 동적으로 DOM 갱신 및 조작하는 웹 개발 기법**
+
+: **일부만 업데이트 하는 방식**
+
+(이름에 XML 있는 이유는 예전에는 데이터 포맷으로 XML 많이 사용했기 때문)
+
+<br>
+
+#### [AJAX 동작방식]
+
+----
+
+![](https://github.com/baeharam/Must-Know-About-Frontend/raw/master/images/javascript/ajax.png)
+
+1. 사용자가 AJAX 적용된 UI와 상호작용
+2. 서버에 AJAX 요청 보냄
+3. 서버는 DB에서 데이터 가져와서 JS 파일에 정의된대로 HTML/CSS와 데이터 융합해 만든 DOM 객체 UI 업뎃
+4. DOM 객체를 UI에 업데이트
+
+<br>
+
+#### [AJAX 데이터 형식 - JSON]
+
+----
+
+- **JSON** : 순수한 텍스트로 구성된 규칙 있는 데이터 구조
+
+  ```js
+  // JSON 구조 예제
+  {
+  	"name" : "Han",
+  	"gender" : "male",
+  	"age" : 20
+  }
+  ```
+
+- **객체 => 문자열 : JSON.stringify**
+
+  ```js
+  const strObject = JSON.stringify(object);
+  ```
+
+- **객체 => 문자열 : JSON.parse**
+
+  ```js
+  const obj = JSON.parse(strObject);
+  ```
+
+<br>
+
+#### [AJAX 사용법 - XMLHttpRequest]
+
+----
+
+: **XMLHttpRequest 객체 사용해 인스턴스를 만들어 인스턴스의 open(), send() 등의 메소드를 이용**
+
+```js
+// XMLHttpRequest 객체 생성
+const xhr = new XMLHttpRequest();
+
+// 비동기 방식으로 request 오픈
+xhr.open('GET', '/users');
+
+// request 전송
+xhr.send();
+```
+
+- **XMLHttpRequest.open**
+
+  ```
+  XMLHttpRequest.open(method, url[, async])
+  ```
+
+  - method : "GET, "POST, "PUT", "DELETE"
+  - url : 요청 보낼 URL
+  - async : 비동기 조작 여부, 디폴트 true로 비동기 방식으로 동작.
+
+  <br>
+
+- **XMLHttpREquest.send**
+
+  ```
+  XMLHttpRequest.send();
+  
+  xhr.send(null);
+  // xhr.send('string');
+  // xhr.send(new Blob()); // 파일 업로드와 같이 바이너리 컨텐트를 보내는 방법
+  // xhr.send({ form: 'data' });
+  // xhr.send(document);
+  ```
+
+  - **GET 메소드** 
+
+    : URL의 일부분인 **쿼리문자열로 데이터를 서버로 전송**
+
+    : 요청 메소드가 GET인 경우, send 메소드의 인자는 무시되고 request body은 null로 설정된다.
+
+  - **POST 메소드** : 데이터를 **Request body에 담아 전송**
+
+<br>
+
+#### [AJAX XMLHttpRequest 예제]
+
+---
+
+```js
+var ourRequest = new XMLHttpRequest();
+ourRequest.open(
+  "GET",
+  "https://learnwebcode.github.io/json-example/animals-1.json"
+);
+ourRequest.onload = () => {
+  var ourData = JSON.parse(ourRequest.responseText);
+  console.log(ourData[0]);
+};
+ourRequest.send();
+```
+
+: `open()` 으로 요청할 메소드와 URL을 설정한 뒤, 모두 로드되었을 경우의 콜백함수를 초기화한다.
+
+<br>
+
+#### [ES6 - fetch API 사용한 AJAX 통신]
+
+---
+
+: 새로나온 `fetch` 를 사용해서 요청을 할 수도 있는데 **IE를 지원하지 않는다는 점**을 제외하고는 `XMLHttpReqeust` 보다 훨씬 직관적이다. 
+
+: ES6(ES2015) 에서 표준이 되었고, Promise를 리턴한다.
+
+```js
+fetch("https://learnwebcode.github.io/json-example/animals-1.json")
+	.then(res => res.json())
+	.then(resJson => console.log(resJson));
+```
+
+: 응답객체는 `json()` , `blob()` 과 같은 내장 메서드로 body를 추출해내고 이는 다시 Promise를 리턴
+
+<br>
+
+#### [fetch 사용법]
+
+----
+
+```js
+export const api = {
+	fetchTest: (keyword) => {
+		return fetch("json주소명.json")
+			.then((res) => res.json());
+	}
+}
+```
+
+```js
+import {api} from "./api.js";
+...
+api.fetchTest(keyword).then(({data}) => {
+	this.setState(data);
+})
+```
+
+<br>
+
+#### [참고]
+
+----
+
+: 더 자세한 사용법 생략..
+
+: https://poiemaweb.com/js-ajax
+
+: https://github.com/baeharam/Must-Know-About-Frontend/blob/master/Notes/javascript/ajax.md
+
