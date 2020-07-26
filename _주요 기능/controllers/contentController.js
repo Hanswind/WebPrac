@@ -1,1 +1,1 @@
-export const slider = (req, res) => res.send("slider");
+export const slider = (req, res) => res.render("slider");
