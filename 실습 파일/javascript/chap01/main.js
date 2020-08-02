@@ -1,13 +1,13 @@
-const API_KEY = "168b8ecd20a24fc2844de0f66b3e71ba"
+const getCount = (function () {
+  let count = 1;
+  return () => {
+    ++count;
+    return count;
+  };
+})();
 
-const fetchWeather = (API_KEY) => {
-    return fetch("https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=" + API_KEY)
-        .then(res => res.json())
-        .then(data => console.log(data))
-}
-fetchWeather(API_KEY)
-
-
+console.log(getCount()); // 2
+console.log(getCount()); // 3
 
 // =======================================
 /*
