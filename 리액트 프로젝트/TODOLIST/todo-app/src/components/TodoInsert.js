@@ -5,14 +5,10 @@ import "./TodoInsert.scss";
 const TodoInsert = ({ onInsert }) => {
   const [value, setValue] = useState("");
 
-  const onChange = useCallback(
-    (e) => {
-      // onChange될때마다 입력값 onInsert 작업 수행
-      //onInsert(value);
-      setValue(e.target.value);
-    },
-    [onInsert, value]
-  );
+  const onChange = useCallback((e) => {
+    // onChange될때마다 입력값 onInsert 작업 수행
+    setValue(e.target.value);
+  }, []);
 
   const onClick = useCallback(
     (e) => {

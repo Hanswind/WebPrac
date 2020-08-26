@@ -184,9 +184,7 @@
 
    <br>
 
-   ------
-
-   <br>
+   ----
 
 10. **App에서 전달해준 todos 값 내용 제대로 보여주기**
 
@@ -385,9 +383,105 @@
         );
       ```
 
+      <br>
       
+      ----
+    
+12. **지우기 기능 구현하기**
 
+    : **todos 배열에서 id로 항목 지우기(filter 함수 사용) - onRemove 함수 작성**
 
+    ```react
+    // App.js
+    ...
+     // 주어진 id 값으로 todo 지우는 함수
+      const onRemove = useCallback(
+        (id) => {
+          setTodos(todos.filter((todo) => todo.id !== id));
+        },
+        [todos]
+      );
+    ...
+      return (
+        <TodoTemplate>
+          <TodoInsert onInsert={onInsert} />
+          <TodoList todos={todos} onRemove={onRemove} />
+        </TodoTemplate>
+      );
+    ```
+
+    ```react
+    // TodoList.js
+    ...
+    	<TodoListItem todo={todo} key={todo.id} onRemove={onRemove} />
+    ```
+
+    ```react
+    // TodoListItem.js
+    ...
+    	const { id, text, checked } = todo;
+    	...
+    	<div className="remove" onClick={() => onRemove(id)}>
+    ```
+
+    <br>
+
+    ----
+
+13. **수정 기능 구현**
+
+    : **onToggle이라는 함수를 App에 만들고, 해당 함수를 TodoList 컴포넌트에게 props로 넣어줌. **
+
+    : **그 다음엔 TodoList를 통해 TodoListItem까지 전달해주면 된다.**
+
+    ```react
+    // App.js
+    ...
+    // 작성한 내용 수정 기능 함수
+      const onToggle = useCallback((id) => {
+        setTodos(
+          todos.map((todo) =>
+            todo.id === id ? { ...todo, checked: !todo.checked } : todo
+          )
+        );
+      });
+    ...
+    <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
+    ```
+
+    : **배열내 값 수정할때 쓰는 방식 `...파라미터` **
+
+    ```react
+    // TodoList.js
+    ...
+    const TodoList = ({ todos, onRemove, onToggle }) => {
+      return (
+        <div className="TodoList">
+          {todos.map((todo) => (
+            <TodoListItem
+              todo={todo}
+              key={todo.id}
+              onRemove={onRemove}
+              onToggle={onToggle}
+            />
+          ))}
+        </div>
+      );
+    };
+    ```
+
+    ```react
+    // TodoListItem.js
+    ...
+    	  <div
+            className={`checkbox ${checked ? "checked" : null}`}
+            onClick={() => onToggle(id)}
+          >
+    ```
+
+    : **이제 체크박스 클릭하면 상태 업데이트 구현 완료!**
+
+    <br>
 
 #### [꿀팁]
 
