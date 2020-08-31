@@ -1,12 +1,25 @@
+.TodoListItem-virtualized {
+  // 이제 최외부에 virtualized div 로 감싸줫기에 해당 코드에 적용
+  & + & {
+    border-top: 1px solid #dee2e6;
+  }
+
+  &:nth-child(even) {
+    background: #f8f9fa;
+  }
+}
+
 .TodoListItem {
   padding: 1rem;
   display: flex;
   align-items: center; // 세로 중앙 정렬
 
   //.TodoListItem:nth-child(even)
+  /*
   &:nth-child(even) {
     background: #f8f9fa;
   }
+  */
 
   //.TodoListItem .checkbox
   .checkbox {
@@ -50,7 +63,9 @@
   }
   // 엘리먼트 사이사이에 테두리 넣어줌
   // .ToDoListItem과 .ToDoLisTItem 사이에 적용
+  /*
   & + & {
     border-top: 1px solid #dee2e6;
   }
+  */
 }
