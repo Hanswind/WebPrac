@@ -1,32 +1,21 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useCallback } from "react";
+import dotenv from "dotenv";
+import NewsList from "./components/NewsList";
+import Categories from "./components/Categories";
+
+dotenv.config();
 
 const App = () => {
-  const [data, setData] = useState(null);
-  const onClick = async () => {
-    try {
-      await axios
-        .get("https://jsonplaceholder.typicode.com/todos/1")
-        .then((response) => {
-          setData(response.data);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // 현재 선택된 카테고리
+  const [category, setCategory] = useState("all");
+
+  // 현재 선택 카테고리 전환 함수
+  const onSelect = useCallback((category) => setCategory(category), []);
   return (
-    <div>
-      <div>
-        <button onClick={onClick}>불러오기</button>
-      </div>
-      {data && (
-        <textarea
-          rows={7}
-          value={JSON.stringify(data, null, 2)}
-          readOnly={true}
-        />
-      )}
-    </div>
+    <>
+      <Categories category={category} onSelect={onSelect} />
+      <NewsList category={category} />;
+    </>
   );
 };
 
