@@ -1,3 +1,4 @@
+import { createAction, handleActions } from "redux-actions";
 // 1. 액션 타입 정의
 // 액션 타입은 대문자로 정의
 // 문자열 내용은 '모듈 이름/액션 이름' 형태로 작성 권장 => 프로젝트 커져도 충돌 X
@@ -5,8 +6,12 @@ const INCREASE = "counter/INCREASE";
 const DECREASE = "counter/DECREASE";
 
 // 2. 액션 생성 함수 만들기
+/*
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
+*/
+export const increase = createAction(INCREASE);
+export const decrease = createAction(DECREASE);
 
 // 3. counter 모듈의 초기 상태 설정
 const initialState = {
@@ -14,6 +19,14 @@ const initialState = {
 };
 
 // 4. counter 모듈 리듀서 함수 생성
+const counter = handleActions(
+  {
+    [INCREASE]: (state, action) => ({ number: state.number + 1 }),
+    [DECREASE]: (state, action) => ({ number: state.number - 1 }),
+  },
+  initialState
+);
+/*
 function counter(state = initialState, action) {
   switch (action.type) {
     case INCREASE:
@@ -28,6 +41,7 @@ function counter(state = initialState, action) {
       return state;
   }
 }
+*/
 
 // 만들어준 리듀서 함수 내보내기
 export default counter;
