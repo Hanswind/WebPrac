@@ -1,1 +1,0 @@
-https://docs.npmjs.com/cli/install
